@@ -1,17 +1,14 @@
-import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
-export default async function handler(req, res) {
-  try {
-    const response = await fetch('https://trading-bot-swart.vercel.app');
-    const data = await response.json();
-    if (response.ok && data.message === 'colab notebook ran successfully') {
-      res.status(200).send(data);
-    } else {
-      res.status(500).send(data.message);
-    }
-  } catch (error) {
-    console.log(error);
-    res.status(500).send('Error running Colab notebook');
-  }
-}
+module.exports = (req, res) => {
+  fetch('https://trading-bot-swart.vercel.app/api/run-colab')
+    .then((response) => {
+      console.log('Colab executed successfully!');
+      res.status(200).send('Colab executed successfully!');
+    })
+    .catch((error) => {
+      console.error('Failed to execute Colab:', error);
+      res.status(500).send('Failed to execute Colab');
+    });
+};
 

@@ -1,19 +1,20 @@
 {
- "version": 2,
-   "builds": [
-     {
-       "src": "app.py",
-       "use": "@vercel/python"
-     }
-   ],
-   "routes": [
-    { "src": "/", "dest": "/app.py" },
-    { "src": "/run-colab", "dest": "/run-colab" }
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    }
   ],
-  "crons": [{
-    "path": "/api/cron",
-    "schedule": "0 10 * * *"
-  }]
+  "routes": [
+    { "src": "/run-colab", "dest": "/api/run-colab" }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron",
+      "schedule": "0 5 * * *"
+    }
+  ]
 }
 
 
