@@ -1,6 +1,6 @@
 {
   "crons": [{
-    "path": "C:/Users/Aioria/Desktop/tradinBotGit/tradingBot/cron",
+    "path": "./cron",
     "schedule": "0 10 * * *"
   }]
 }
