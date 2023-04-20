@@ -1,3 +1,2 @@
 Flask
-gdown
-requests
+nbconvert
