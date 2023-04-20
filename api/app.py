@@ -1,16 +1,14 @@
 from flask import Flask, jsonify
+import gdown
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def home():
     return "HELLO from vercel use flask"
 
-@app.route("/api/run-colab")
+@app.route('/run-colab')
 def run_colab():
-    response = requests.get("https://https://trading-bot-swart.vercel.app/api/run-colab")
-    return response.json()
-
-if __name__ == '__main__':
-    app.run()
+    gdown.download('https://drive.google.com/file/d/18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ', 'tradingBot.ipynb', quiet=False)
+    return jsonify(message='colab notebook ran successfully')
 
