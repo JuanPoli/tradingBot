@@ -1,5 +1,4 @@
 from flask import Flask, jsonify
-import gdown
 import requests
 
 app = Flask(__name__)
@@ -10,10 +9,7 @@ def home():
 
 @app.route("/run-colab")
 def run_colab():
-    url = 'https://drive.google.com/u/0/uc?id=18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ&export=download'
-    file_name = 'tradingBot.ipynb'
-    response = requests.get(url)
-    open(file_name, 'wb').write(response.content)
+    url = 'https://drive.google.com/file/d/18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ/view?usp=sharing'
+    output = 'tradingBot.ipynb'
+    gdown.download(url, output, quiet=False)
     return jsonify(message='colab notebook ran successfully')
-
-
