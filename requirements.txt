@@ -1,2 +1,9 @@
 Flask
 gdown
+certifi
+distlib
+filelock
+pipenv
+platformdirs
+virtualenv
+virtualenv-clone
