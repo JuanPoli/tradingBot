@@ -8,13 +8,12 @@ app = Flask(__name__)
 def home():
     return "HELLO from vercel use flask"
 
-@app.route('/run-colab')
+@app.route("/run-colab")
 def run_colab():
-    print('Starting Colab download...')
-    url = 'https://drive.google.com/u/0/uc?id=18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ&export=download'
+    url = "https://drive.google.com/u/0/uc?id=18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ&export=download"
     response = requests.get(url)
-    with open('tradingBot.ipynb', 'wb') as f:
+    with open("tradingBot.ipynb", "wb") as f:
         f.write(response.content)
-    return jsonify(message='colab notebook ran successfully')
+    return jsonify(message="colab notebook ran successfully")
 
 
