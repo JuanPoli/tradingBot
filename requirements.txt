@@ -1,2 +1,11 @@
 Flask
 gdown
+Yahoo Finance API
+pandas
+numpy
+matplotlib
+stockstats
+OpenAI gym
+stable-baselines
+tensorflow
+pyfolio
