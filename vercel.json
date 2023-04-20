@@ -1,6 +1,6 @@
 {
   "crons": [{
-    "path": "/api/run-colab",
+    "path": "/app",
     "schedule": "0 10 * * *"
   }]
 }
