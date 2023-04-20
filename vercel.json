@@ -1,20 +1,26 @@
 {
- "version": 2,
-   "builds": [
-     {
-       "src": "app.py",
-       "use": "@vercel/python"
-     }
-   ],
-   "routes": [{ 
-    "handle": "filesystem" 
-    },
-    { "src": "/run-colab", "dest": "/run-colab" }
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python-flask"
+    }
   ],
-  "crons": [{
-    "path": "/api/cron",
-    "schedule": "0 10 * * *"
-  }]
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.py"
+    }
+  ],
+  "env": {
+    "FLASK_APP": "app.py"
+  },
+  "crons": [
+    {
+      "path": "/api/cron",
+      "schedule": "0 10 * * *"
+    }
+  ]
 }
 
 
