@@ -1,9 +1,2 @@
 Flask
 gdown
-pandas
-numpy
-matplotlib
-stockstats
-stable-baselines
-tensorflow
-pyfolio
