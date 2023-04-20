@@ -1,6 +1,6 @@
 {
   "crons": [{
-    "path": "/api/run-colab",
+    "path": "/trading-bot/run-colab",
     "schedule": "0 10 * * *"
   }]
 }
