@@ -1,6 +1,6 @@
 {
   "crons": [{
-    "path": "/app",
+    "path": "https://*.vercel.app/trading.bot/cron",
     "schedule": "0 10 * * *"
   }]
 }
