@@ -1,5 +1,4 @@
 from flask import Flask, jsonify
-import requests
 
 app = Flask(__name__)
 
@@ -7,9 +6,11 @@ app = Flask(__name__)
 def home():
     return "HELLO from vercel use flask"
 
-@app.route("/run-colab")
+@app.route("/api/run-colab")
 def run_colab():
-    url = 'https://drive.google.com/file/d/18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ/view?usp=sharing'
-    output = 'tradingBot.ipynb'
-    gdown.download(url, output, quiet=False)
-    return jsonify(message='colab notebook ran successfully')
+    response = requests.get("https://your-vercel-app-url/api/run-colab")
+    return response.json()
+
+if __name__ == '__main__':
+    app.run()
+
