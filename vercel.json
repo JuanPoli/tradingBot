@@ -1,6 +1,6 @@
 {
   "crons": [{
-    "path": "https://*.vercel.app/trading.bot/cron",
+    "path": "C:/Users/Aioria/Desktop/tradinBotGit/tradingBot/cron",
     "schedule": "0 10 * * *"
   }]
 }
