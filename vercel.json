@@ -1,6 +1,6 @@
 {
   "crons": [{
-    "path": "/run-colab",
+    "path": "/juancruzpoli-gmailcom/trading-bot/run-colab",
     "schedule": "0 10 * * *"
   }]
 }
