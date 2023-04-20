@@ -1,20 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "app.py",
-      "use": "@vercel/python"
-    }
-  ],
-  "routes": [
-    { "src": "/run-colab", "dest": "/api/run-colab" }
-  ],
-  "crons": [
-    {
-      "path": "/api/cron",
-      "schedule": "0 5 * * *"
-    }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
 
 

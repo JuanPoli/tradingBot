@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 module.exports = (req, res) => {
-  fetch('https://trading-bot-swart.vercel.app/api/run-colab')
+  fetch('https://trading-bot-swart.vercel.app/run-colab')
     .then((response) => {
       console.log('Colab executed successfully!');
       res.status(200).send('Colab executed successfully!');
