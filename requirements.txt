@@ -1,6 +1,5 @@
 Flask
 gdown
-Yahoo Finance API
 pandas
 numpy
 matplotlib
