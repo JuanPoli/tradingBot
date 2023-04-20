@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
-import gdown
+import nbconvert
+import os
 
 app = Flask(__name__)
 
@@ -9,6 +10,8 @@ def home():
 
 @app.route('/run-colab')
 def run_colab():
-    gdown.download('https://drive.google.com/file/d/18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ', 'tradingBot.ipynb', quiet=False)
-    return jsonify(message='colab notebook ran successfully')
+    notebook_file = "tradingBot.ipynb"
+    python_file = "tradingBot.py"
+    nbconvert.export_python(notebook_file, python_file)
+    os.system(f"python {python_file}")
 
