@@ -14,6 +14,6 @@ def run_colab():
     response = requests.get(url)
     with open('tradingBot.ipynb', 'wb') as f:
         f.write(response.content)
-    return jsonify(message='colab notebook ran successfully')
+    return "HOLA"
 
 
