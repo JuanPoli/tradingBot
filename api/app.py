@@ -6,8 +6,6 @@ app = Flask(__name__)
 def home():
 	return "HELLO from vercel use flask"
 
-
-
 @app.route('/run-colab')
 def run_colab():
     gdown.download('https://drive.google.com/file/d/18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ#scrollTo=osBHhVysOEzi', 'tradingBot.ipynb', quiet=False)
