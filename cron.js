@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 export default async function handler(req, res) {
   try {
-    const response = await fetch('https://https://vercel.com/juancruzpoli-gmailcom/trading-bot/run-colab');
+    const response = await fetch('https://trading-bot-swart.vercel.app/run-colab');
     const data = await response.json();
     res.status(200).send(data);
   } catch (error) {
