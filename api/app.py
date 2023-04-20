@@ -10,10 +10,6 @@ def home():
 
 @app.route("/run-colab")
 def run_colab():
-    url = 'https://drive.google.com/u/0/uc?id=18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ&export=download'
-    response = requests.get(url)
-    with open('tradingBot.ipynb', 'wb') as f:
-        f.write(response.content)
     return "HOLA"
 
 
