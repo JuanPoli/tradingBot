@@ -3,6 +3,10 @@ from flask import Flask
 
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+	return "HELLO from vercel use flask"
+
 @app.route('/run-colab')
 def run_colab():
     file_id = '18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ#scrollTo=osBHhVysOEzi'
