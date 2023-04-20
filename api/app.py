@@ -10,7 +10,6 @@ def home():
 
 @app.route("/run-colab")
 def run_colab():
-    gdown.download('https://drive.google.com/file/d/18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ', 'tradingBot.ipynb', quiet=False)
     return jsonify(message='colab notebook ran successfully')
 
 
