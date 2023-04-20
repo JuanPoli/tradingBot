@@ -1,6 +1,6 @@
 {
   "crons": [{
-    "path": "https://trading-bot.vercel.app/run-colab",
+    "path": "/run-colab",
     "schedule": "0 10 * * *"
   }]
 }
