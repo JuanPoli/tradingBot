@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-import gdown
+import requests
 
 app = Flask(__name__)
 
@@ -9,5 +9,14 @@ def home():
 
 @app.route("/run-colab")
 def run_colab():
-    gdown.download('https://colab.research.google.com/drive/18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ?usp=sharing', 'tradingBot.ipynb', quiet=False)
+    file_id = '18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ'
+    url = f'https://drive.google.com/uc?id={file_id}'
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        with open('filename.csv', 'wb') as f:
+            f.write(response.content)
+        print('File downloaded successfully!')
+    else:
+        print('Error downloading file')
     return jsonify(message='colab notebook ran successfully')
