@@ -9,12 +9,11 @@ def home():
 
 @app.route("/run-colab")
 def run_colab():
-    file_id = '18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ'
-    url = f'https://drive.google.com/uc?id={file_id}'
+    url = f'https://drive.google.com/uc?id=18jK7gSM1Lv-AVYEoHmeDesaRO0eJhZkJ'
     response = requests.get(url)
 
     if response.status_code == 200:
-        with open('filename.csv', 'wb') as f:
+        with open('tradingBot.ipynb', 'wb') as f:
             f.write(response.content)
         print('File downloaded successfully!')
     else:
