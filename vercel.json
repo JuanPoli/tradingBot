@@ -8,7 +8,7 @@
 		"dest": "api/app.py"
 	}],
        "crons": [{
-                "path": "/api/cron",
+                "path": "/api/cron.js",
                 "schedule": "0 10 * * *"
         }]
 }
