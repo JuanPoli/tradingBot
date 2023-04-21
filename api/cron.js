@@ -1,13 +1,16 @@
 const fetch = require('node-fetch');
 
+console.log("Starting cron job...");
+
 fetch('https://trading-bot-swart.vercel.app/run-colab')
   .then(response => {
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error('Response not OK');
-    }
+    console.log("Response status: " + response.status);
+    return response.json();
   })
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
+  .then(data => {
+    console.log("Response data: " + JSON.stringify(data));
+  })
+  .catch(error => {
+    console.error("Error: " + error);
+  });
 
